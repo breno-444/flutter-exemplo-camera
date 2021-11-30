@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:camera_camera/camera_camera.dart';
@@ -8,14 +7,14 @@ import 'package:flutter_camera_exemplo/widgets/anexo.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:get/get.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+class SegundaRota extends StatefulWidget {
+  SegundaRota ({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _SegundaRota createState() => _SegundaRota();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SegundaRota extends State<SegundaRota > {
   File? arquivo;
   final picker = ImagePicker();
 
@@ -40,7 +39,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Envie seu Comprovante'),
+        title: Text('Tire uma foto do veiculo'),
       ),
       body: Center(
         child: Row(
