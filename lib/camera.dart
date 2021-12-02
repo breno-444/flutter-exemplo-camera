@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:camera_camera/camera_camera.dart';
 import 'package:flutter_camera_exemplo/preview_page.dart';
@@ -39,7 +38,7 @@ class _SegundaRota extends State<SegundaRota > {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tire uma foto do veiculo'),
+        title: Text('Tire uma foto do documento'),
       ),
       body: Center(
         child: Row(
