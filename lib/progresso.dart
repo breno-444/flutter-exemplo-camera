@@ -58,6 +58,7 @@ class _ProgressoState extends State<Progresso> {
     return Scaffold(
       
       appBar: AppBar(
+         backgroundColor: Colors.black,
         title: Text('Progresso do veiculo'),
       ),
       body: Center(

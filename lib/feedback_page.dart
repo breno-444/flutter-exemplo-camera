@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_camera_exemplo/inicial_page.dart';
+import 'package:flutter_camera_exemplo/splash_2.dart';
 
 class Aplicativo extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class FeedbackPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         backgroundColor: Colors.black,
+        backgroundColor: Colors.black,
         //backgroundColor: Colors.white,
         elevation: 2.0,
         title: Text(
@@ -35,7 +36,7 @@ class FeedbackPage extends StatelessWidget {
             SizedBox(height: 10.0),
             Text(
               'Feedback',
-              style: TextStyle(color: Color(0xffc5c5c5)),
+              style: TextStyle(color: Colors.black87),
             ),
             SizedBox(height: 20.0),
             buildFeedbackForm(),
@@ -48,12 +49,16 @@ class FeedbackPage extends StatelessWidget {
                   child: Container(
                     margin: EdgeInsets.all(10),
                     child: ButtonTheme(
-                      buttonColor: Colors.red,
                       child: ElevatedButton(
-                        onPressed: () {
-                         
+                        onPressed: () => {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Splash2()),
+                          ),
                         },
-                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black)),
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.black)),
                         child: Text(
                           "Enviar",
                           style: TextStyle(
@@ -86,7 +91,7 @@ buildFeedbackForm() {
             hintText: "Descreva resumidamente o que acho do nosso serviço",
             hintStyle: TextStyle(
               fontSize: 13.0,
-              color: Color(0xffc5c5c5),
+              color: Colors.black54,
             ),
             border: OutlineInputBorder(
               borderSide: BorderSide(color: Color(0xffc5c5c5)),

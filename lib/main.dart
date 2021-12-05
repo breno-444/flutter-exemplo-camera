@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'cadastro_cliente.dart';
 import 'cadastro_filial_pages.dart';
 import 'cadastro_segurado_pages.dart';
 import 'cadastro_seguradora_pages.dart';
@@ -28,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-         title: Text('Tela de login'),
+        title: Text('Tela de login'),
         actions: [
           PopupMenuButton<int>(
             child: Text(
@@ -50,6 +51,10 @@ class _LoginPageState extends State<LoginPage> {
               PopupMenuItem<int>(
                 value: 2,
                 child: Text('Cadastro de Seguradora'),
+              ),
+              PopupMenuItem<int>(
+                value: 3,
+                child: Text('Cadastro de Cliente'),
               )
             ],
           )
@@ -103,20 +108,18 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(
               width: 275,
-      
               child: Container(
-                
                 margin: EdgeInsets.all(10),
                 child: ButtonTheme(
-                buttonColor: Colors.black,
+                  buttonColor: Colors.black,
                   child: ElevatedButton(
-                     
                     onPressed: () => Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => InicialPage()
-                       ),
+                      MaterialPageRoute(builder: (context) => InicialPage()),
                     ),
-                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black)),
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.black)),
                     child: Text(
                       "Entrar",
                       style: TextStyle(
@@ -148,6 +151,10 @@ class _LoginPageState extends State<LoginPage> {
       case 2:
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => CadastroSeguradoraPage()));
+        break;
+      case 3:
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => CadastroClientePage()));
         break;
     }
   }

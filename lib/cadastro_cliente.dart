@@ -1,31 +1,28 @@
 import 'package:flutter/material.dart';
-
-import 'camera_2.dart';
-import 'inicial_page.dart';
-import 'camera.dart';
+import 'package:flutter_camera_exemplo/main.dart';
 
 class Aplicativo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CadastroSinistroPage(),
+      home: CadastroClientePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class CadastroSinistroPage extends StatefulWidget {
+class CadastroClientePage extends StatefulWidget {
   @override
-  _CadastroSinistroPageState createState() => _CadastroSinistroPageState();
+  _CadastroClientePageState createState() => _CadastroClientePageState();
 }
 
-class _CadastroSinistroPageState extends State<CadastroSinistroPage> {
+class _CadastroClientePageState extends State<CadastroClientePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         backgroundColor: Colors.black,
-        title: Text('Tela de cadastro de sinistro'),
+        backgroundColor: Colors.black,
+        title: Text('Tela de cadastro'),
       ),
       backgroundColor: Colors.white,
       body: Center(
@@ -45,7 +42,7 @@ class _CadastroSinistroPageState extends State<CadastroSinistroPage> {
                       icon: Icon(Icons.clear),
                     ),
                     border: OutlineInputBorder(),
-                    labelText: 'Nome do segurado',
+                    labelText: 'Nome do cliente',
                   ),
                 ),
               ),
@@ -62,7 +59,7 @@ class _CadastroSinistroPageState extends State<CadastroSinistroPage> {
                       icon: Icon(Icons.clear),
                     ),
                     border: OutlineInputBorder(),
-                    labelText: 'CPF do segurado',
+                    labelText: 'CPF do cliente',
                   ),
                 ),
               ),
@@ -137,30 +134,6 @@ class _CadastroSinistroPageState extends State<CadastroSinistroPage> {
                 ),
               ),
             ),
-           SizedBox(
-              width: 275,
-              child: Container(
-                margin: EdgeInsets.all(6),
-                child: ButtonTheme(
-                  child: ElevatedButton(
-                    onPressed: () => {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) =>TerceiraRota()),
-                      ),
-                    },
-                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black)),
-                    child: Text(
-                      "Foto",
-                      style: TextStyle(
-                          fontFamily: 'Raleway',
-                          fontSize: 20,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-            ),
             SizedBox(
               width: 275,
               child: Container(
@@ -170,12 +143,14 @@ class _CadastroSinistroPageState extends State<CadastroSinistroPage> {
                     onPressed: () => {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Inicial()),
+                        MaterialPageRoute(builder: (context) => LoginPage()),
                       ),
                     },
-                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black)),
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.black)),
                     child: Text(
-                      "cadastrar ",
+                      "cadastrar",
                       style: TextStyle(
                           fontFamily: 'Raleway',
                           fontSize: 20,

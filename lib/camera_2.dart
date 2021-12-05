@@ -1,20 +1,21 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:camera_camera/camera_camera.dart';
+import 'package:flutter_camera_exemplo/cadastro_sinistro_pages.dart';
 import 'package:flutter_camera_exemplo/preview_page.dart';
 import 'package:flutter_camera_exemplo/progresso.dart';
 import 'package:flutter_camera_exemplo/widgets/anexo.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:get/get.dart';
 
-class SegundaRota extends StatefulWidget {
-  SegundaRota({Key? key}) : super(key: key);
+class TerceiraRota extends StatefulWidget {
+  TerceiraRota({Key? key}) : super(key: key);
 
   @override
-  _SegundaRota createState() => _SegundaRota();
+  _TerceiraRota createState() => _TerceiraRota();
 }
 
-class _SegundaRota extends State<SegundaRota> {
+class _TerceiraRota extends State<TerceiraRota> {
   File? arquivo;
   final picker = ImagePicker();
 
@@ -88,7 +89,7 @@ class _SegundaRota extends State<SegundaRota> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Progresso()),
+                                builder: (context) => CadastroSinistroPage()),
                           ),
                         },
                         style: ButtonStyle(
