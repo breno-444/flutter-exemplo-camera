@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'main.dart';
+
 
 
 class Aplicativo extends StatelessWidget {
@@ -22,6 +24,7 @@ class _CadastroSeguradoraPageState extends State<CadastroSeguradoraPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         backgroundColor: Colors.black,
         title: Text('Tela de cadastro'),
       ),
       backgroundColor: Colors.white,
@@ -144,130 +147,18 @@ class _CadastroSeguradoraPageState extends State<CadastroSeguradoraPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CadastroSegurado()),
+                            builder: (context) =>LoginPage()),
                       ),
                     },
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black)),
                     child: Text(
-                      "cadastrar segurado",
+                      "cadastrar",
                       style: TextStyle(
                           fontFamily: 'Raleway',
                           fontSize: 20,
                           color: Colors.white),
                     ),
                   ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class CadastroSegurado extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("cadastro"),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              child: Text(
-                'Fazer uplaod dos documentos do segurado',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 10,
-                ),
-              ),
-            ),
-            Container(
-              child: Text(
-                'é nescessário a CNH ',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 10,
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              child: ButtonTheme(
-                child: ElevatedButton(
-                  onPressed: () => {},
-                  child: Text('Novo cadastro'),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class CadastroFilial extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("cadastro"),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              child: Text(
-                'Fazer uplaod dos documentos do segurado',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 10,
-                ),
-              ),
-            ),
-            Container(
-              child: Text(
-                'é nescessário a CNH ',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 10,
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 275,
-              child: Container(
-                child: TextField(
-                  autofocus: true,
-                  decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                      onPressed: () => {},
-                      icon: Icon(Icons.clear),
-                    ),
-                    border: OutlineInputBorder(),
-                    labelText: 'Nome do segurado',
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all(6),
-              child: ButtonTheme(
-                child: ElevatedButton(
-                  onPressed: () => {
-                    Navigator.pop(
-                      context,
-                      MaterialPageRoute(builder: (context) => CadastroFilial()),
-                    ),
-                  },
-                  child: Text('Novo cadastro'),
                 ),
               ),
             ),

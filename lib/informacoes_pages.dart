@@ -21,7 +21,8 @@ class _InformacaoPageState extends State<InformacaoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tela de Login'),
+              backgroundColor: Colors.black,
+        title: Text( 'Informações Gerais\n'),
       ),
       backgroundColor: Colors.white,
       body: Center(

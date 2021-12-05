@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'informacoes_pages.dart';
 
-
+import 'package:flutter_camera_exemplo/progresso.dart';
 import 'cadastro_sinistro_pages.dart';
+import 'informacoes_pages.dart';
+import 'feedback_page.dart';
 
-void inicial() => runApp(Aplicativo());
 
 class Aplicativo extends StatelessWidget {
   @override
@@ -68,6 +68,7 @@ class InicialState extends State<Inicial> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         backgroundColor: Colors.black,
         title: Text('Tela Inicial'),
       ),
       backgroundColor: Colors.white,
@@ -97,18 +98,18 @@ class InicialState extends State<Inicial> {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-              decoration: BoxDecoration(                
-                color: Colors.blue,
+              decoration: BoxDecoration(
+                color: Colors.black,
               ),
               accountName: Text("Login"),
               accountEmail: Text("login@login.com.br"),
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white,
+                backgroundColor: Colors.blue,
                 child: Text(
                   "L",
-                    style: TextStyle(
+                  style: TextStyle(
                     fontSize: 40.0,
-                    color: Colors.blue,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -121,6 +122,20 @@ class InicialState extends State<Inicial> {
               ),
             ),
             ListTile(
+              title: Text('Feedback'),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FeedbackPage()),
+              ),
+            ),
+            ListTile(
+              title: Text('Progresso do veiculo'),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Progresso()),
+              ),
+            ),
+             ListTile(
               title: Text('Cadastro de sinistro'),
               onTap: () => Navigator.push(
                 context,

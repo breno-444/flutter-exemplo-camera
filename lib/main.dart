@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'cadastro_filial_pages.dart';
 import 'cadastro_segurado_pages.dart';
 import 'cadastro_seguradora_pages.dart';
-import 'cadastro_sinistro_pages.dart';
+
 import 'inicial_page.dart';
 
 void main() => runApp(Aplicativo());
@@ -27,12 +27,18 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tela de Login'),
+        backgroundColor: Colors.black,
+         title: Text('Tela de login'),
         actions: [
           PopupMenuButton<int>(
-            child: Text('CADASTRAR'),          
+            child: Text(
+              'CADASTRAR',
+              style: TextStyle(
+                height: 5,
+              ),
+            ),
             onSelected: (item) => onSelected(context, item),
-              itemBuilder: (context) => [
+            itemBuilder: (context) => [
               PopupMenuItem<int>(
                 value: 0,
                 child: Text('Cadastro de Filial'),
@@ -41,7 +47,6 @@ class _LoginPageState extends State<LoginPage> {
                 value: 1,
                 child: Text('Cadastro de Segurado'),
               ),
-            
               PopupMenuItem<int>(
                 value: 2,
                 child: Text('Cadastro de Seguradora'),
@@ -73,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                       icon: Icon(Icons.clear),
                     ),
                     border: OutlineInputBorder(),
-                    labelText: 'Login',
+                    labelText: 'E-mail',
                   ),
                 ),
               ),
@@ -91,21 +96,27 @@ class _LoginPageState extends State<LoginPage> {
                       icon: Icon(Icons.clear),
                     ),
                     border: OutlineInputBorder(),
-                    labelText: 'Password',
+                    labelText: 'Senha',
                   ),
                 ),
               ),
             ),
             SizedBox(
               width: 275,
+      
               child: Container(
+                
                 margin: EdgeInsets.all(10),
                 child: ButtonTheme(
+                buttonColor: Colors.black,
                   child: ElevatedButton(
+                     
                     onPressed: () => Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => InicialPage()),
+                      MaterialPageRoute(builder: (context) => InicialPage()
+                       ),
                     ),
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black)),
                     child: Text(
                       "Entrar",
                       style: TextStyle(
@@ -135,10 +146,6 @@ class _LoginPageState extends State<LoginPage> {
             MaterialPageRoute(builder: (context) => CadastroSeguradoPage()));
         break;
       case 2:
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => CadastroSinistroPage()));
-        break;
-      case 3:
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => CadastroSeguradoraPage()));
         break;
