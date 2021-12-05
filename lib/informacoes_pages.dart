@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'passo_a_passo_pages.dart';
 
 class Aplicativo extends StatelessWidget {
   @override
@@ -21,8 +20,8 @@ class _InformacaoPageState extends State<InformacaoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-              backgroundColor: Colors.black,
-        title: Text( 'Informações Gerais\n'),
+        backgroundColor: Colors.black,
+        title: Text('Informações Gerais'),
       ),
       backgroundColor: Colors.white,
       body: Center(
@@ -40,11 +39,11 @@ class _InformacaoPageState extends State<InformacaoPage> {
               ),
             ),
             Text(
-              'Informações Gerais2\n',
+              'Está com alguma duvida em algum assunto? \nNós podemos ajudar!\n',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Raleway',
-                fontSize: 25,
+                fontSize: 18,
                 color: Colors.grey.shade600,
               ),
             ),
@@ -83,7 +82,7 @@ class _InformacaoPageState extends State<InformacaoPage> {
                               builder: (context) => PassoAPassoPage())),
                         },
                         child: Text(
-                          '\nQuais ações devo fazer?\n\nClieque abaixo\n\nPasso a passo!',
+                          '\nQuais ações devo fazer?\n\nClieque aqiu!',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Raleway',
@@ -97,6 +96,68 @@ class _InformacaoPageState extends State<InformacaoPage> {
                 ),
               ],
             )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class PassoAPassoPage extends StatefulWidget {
+  @override
+  _PassoAPassoPageState createState() => _PassoAPassoPageState();
+}
+
+class _PassoAPassoPageState extends State<PassoAPassoPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text('Informações Gerais'),
+      ),
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'Quais ações devo fazer?\n',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Raleway',
+                fontSize: 18,
+                color: Colors.grey.shade600,
+              ),
+            ),
+            Text(
+              'Em ajuda de terceiros deve-se encontrar o endereço da oficina, link ou telefone pra solicitar transporte extra, e o carro reserva, e do reboque ou guincho, e informar o boletim de ocorrencia que deve ser feito junto a ao batalhaão de polícia. \n',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Raleway',
+                fontSize: 18,
+                color: Colors.grey.shade600,
+              ),
+            ),
+            Text(
+              'Na parte de acompanhamento do serviço: deve entrar com seu usuário para acompanhar o progresso do serviço solicitado\n',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Raleway',
+                fontSize: 18,
+                color: Colors.grey.shade600,
+              ),
+            ),
+            Text(
+              'Sua franqui será informada juntamente quando for fazer o boletim de ocorrencia\n',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Raleway',
+                fontSize: 18,
+                color: Colors.grey.shade600,
+              ),
+            ),
           ],
         ),
       ),
